@@ -44,7 +44,7 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
 	name: "Areas",
-	pattern: "{area:exists}/{controller=Product}/{action=Index}/{id?}");
+	pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 //Seeding Data
 var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<DataContext>();
 SeedData.SeedingData(context);

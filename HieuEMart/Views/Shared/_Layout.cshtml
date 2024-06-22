@@ -118,14 +118,13 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a asp-controller="Home" class="active">Trang chủ</a></li>
+								<li><a href="/Home" class="active">Trang chủ</a></li>
 								<li class="dropdown">
-									<a asp-controller="Product">Cửa hàng<i class="fa fa-angle-down"></i></a>
+									<a href="/Product">Cửa hàng<i class="fa fa-angle-down"></i></a>
 									<ul role="menu" class="sub-menu">
-										<li><a asp-controller="Category" >Danh mục</a></li>
-										<li><a asp-controller="Product" asp-action="Details">Chi tiết sản phẩm</a></li>
-										<li><a asp-controller="Cart" asp-action="Checkout">Thanh toán</a></li>
-										<li><a asp-controller ="Cart">Giỏ hàng</a></li>
+										<li><a href="/Category" >Danh mục</a></li>
+										<li><a href="/Cart/Checkout">Thanh toán</a></li>
+										<li><a href="/Cart">Giỏ hàng</a></li>
 										<li><a >Đăng nhập/Đăng ký</a></li>
 									</ul>
 								</li>

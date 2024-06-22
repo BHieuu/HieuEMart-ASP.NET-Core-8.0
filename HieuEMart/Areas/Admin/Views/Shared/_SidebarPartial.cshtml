@@ -1,15 +1,97 @@
-﻿<div class="left-sidebar">
-	<h2>Category</h2>
-	<div class="panel-group category-products" id="accordian">
+﻿    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="~/Content/Clients/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Alexander Pierce</a>
+        </div>
+      </div>
 
-		<vc:categories></vc:categories>
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
-	</div>
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+          </li>
+            <li class="nav-item">
+                <a href="/admin/Category" class="nav-link">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Quản lý sản phẩm
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/admin/product" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Sản phẩm</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="~/Content/Clients/index.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Danh mục</p>
+                        </a>
+                    </li>    
+                </ul>
+            </li>
+          <li class="nav-item">
+                <a href="/admin/news" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Tin tức
+               @*  <span class="right badge badge-danger">New</span> *@
+              </p>
+            </a>
+          </li>
+            <li class="nav-item">
+                <a href="/Admin/posts" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        Bài Viết
+                        @*  <span class="right badge badge-danger">New</span> *@
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/admin/news" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        Quảng cáo
+                        @*  <span class="right badge badge-danger">New</span> *@
+                    </p>
+                </a>
+            </li>
 
-	<div class="panel-group category-products" id="accordian">
 
-		<vc:brands></vc:brands>
-
-	</div>
-
-</div>
+            <li class="nav-item">
+                <a href="/news" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                            Cấu hình hệ thống
+                        @*  <span class="right badge badge-danger">New</span> *@
+                    </p>
+                </a>
+            </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
