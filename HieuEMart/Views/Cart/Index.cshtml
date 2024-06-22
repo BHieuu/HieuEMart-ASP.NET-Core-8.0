@@ -1,0 +1,86 @@
+﻿@using HieuEMart.Models.ViewModels
+@model CartItemViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<h2>GIỎ HÀNG</h2>
+@{
+}
+<section id="cart_items">
+	<div class="container">
+		<div class="breadcrumbs">
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li class="active">Shopping Cart</li>
+			</ol>
+		</div>
+		<div class="table-responsive cart_info">
+			<table class="table table-condensed">
+				<thead>
+					<tr class="cart_menu">
+						<td class="image">Sản phẩm</td>
+						<td class="description"></td>
+						<td class="price">Giá</td>
+						<td class="quantity">Số lượng</td>
+						<td class="total">Tổng</td>
+						<td></td>
+					</tr>
+				</thead>
+				<tbody>
+					@if(Model.CartItems.Count > 0)
+					{
+						@foreach(var item in Model.CartItems)
+						{
+					<tr>
+						<td class="cart_product">
+							<a href=""><img src="~/images/" alt="@item.ProductName"></a>
+						</td>
+						<td class="cart_description">
+							<h4><a href="">@item.ProductName</a></h4>	
+						</td>
+						<td class="cart_price">
+							<p>@item.Price</p>
+						</td>
+						<td class="cart-item-controls">
+						  <div class="btn-group">
+
+									<a class="btn btn-warning btn-sm" asp-controller="Cart" asp-action="Increase" asp-route-id="@item.ProductId">+</a>
+									<input class="cart_quantity_input" type="text" name="quantity" value="@item.Quantity" autocomplete="off" size="1">
+									<a class="btn btn-warning btn-sm" asp-controller="Cart" asp-action="Decrease" asp-route-id="@item.ProductId">-</a>
+
+						  </div>
+						</td>
+						<td class="cart_total">
+							<p class="cart_total_price">@Model.CartItems.Where(x => x.ProductId == item.ProductId).Sum(x => x.Quantity * x.Price).ToString()</p>
+						</td>
+						<td class="cart_delete">
+							<a class="cart_quantity_delete" asp-controller="Cart" asp-action="Remove" asp-route-id="@item.ProductId"><i class="fa fa-times"></i></a>
+						</td>
+					</tr>
+						}
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a class="btn btn-danger btn-sm" asp-controller="Cart" asp-action="Clear">Xóa tất cả </a></td>
+						</tr>
+						<tr rowspan="6">
+							<td colspan="6"><strong>Tổng tiền:</strong><p class="cart_total_price">@Model.GrandTotal.ToString()</p></td>
+							
+						</tr>
+					}
+					else
+					{
+						<tr>
+							<td colspan="5"><h4>Vỏ hàng của bạn đang trống!</h4></td>
+						</tr>
+						
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section> <!--/#cart_items-->
