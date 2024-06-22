@@ -171,6 +171,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
       @RenderBody()
+      @Html.Partial("_NotificationPartial");
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -214,7 +215,7 @@
 <!-- AdminLTE App -->
 <script src="~/Content/Clients/dist/js/adminlte.min.js"></script>
 
-@await RenderSectionAsync("Scripts", required:false)
+    @await RenderSectionAsync("Scripts", required: false)
 <script>
   $(function () {
     //Initialize Select2 Elements

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-HieuEMart-fd6193fc-08b8-4eb0-bc15-5d23e01cd582</UserSecretsId>
   </PropertyGroup>
@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="wwwroot\media\products\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -27,7 +27,6 @@
     <!-- form start -->
     <form asp-action="Create" enctype="multipart/form-data">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="card-body">
             <div class="form-group">
                 <label>Tên sản phẩm</label>
@@ -38,11 +37,6 @@
                 <label>Giá</label>
                 <input asp-for="Price" class="form-control" placeholder="Nhập giá sản phẩm">
                 <span asp-validation-for="Price" class="text-danger" />
-            </div>
-            <div class="form-group">
-                <label>Mô tả</label>
-                <textarea asp-for="Description" class="form-control"></textarea>
-                <span asp-validation-for="Description" class="text-danger" />
             </div>
             <div class="form-group">
                 <label>Danh mục</label>
@@ -61,22 +55,22 @@
             <div class="form-group">
                 <label>Ảnh</label>
                 <div class="input-group">
-                    <div class="custom-file">
-                        <input asp-for="ImageUpload" type="file" class="custom-file-input">
-                        <span asp-validation-for="ImageUpload" class="text-danger" />
-                        <label class="custom-file-label">Choose file</label>
-                    </div>
-                    <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
+                    <div class="input-group mb-3" >
+                        <input asp-for="ImageUpload" type="file" class="form-control" placeholder="Recipient's username" style="height: 45px;">
+                            <span asp-validation-for="ImageUpload"></span>
                     </div>
                 </div>
+               
+            </div>
+
+            <div class="form-group">
+                <label>Mô tả</label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger" />
             </div>
         </div>
-        <!-- /.card-body -->
-
         <div class="card-footer">
-            <a href="/admin/product" class="btn btn-danger">Hủy</a>
-            <button type="submit" class="btn btn-primary">Xác nhận</button>
+            <button class="btn btn-primary">Xác nhận</button>
         </div>
     </form>
 </div>
@@ -85,4 +79,8 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Description");
+    </script>
 }
