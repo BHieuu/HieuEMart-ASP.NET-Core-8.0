@@ -7,8 +7,8 @@
 		<div class="product-details">
 			<!--product-details-->
 			<div class="col-sm-5">
-				<div class="view-product">
-					<img src="~/media/products/@Model.Image" alt="" />
+				<div class="view-product" >
+					<img src="~/media/products/@Model.Image" alt=""  width="100%"/>
 					<h3>ZOOM</h3>
 				</div>
 				<div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -68,8 +68,8 @@
 				</ul>
 			</div>
 			<div class="tab-content">
-				<div class="tab-pane fade active in" id="details">		
-							@Model.Description
+				<div class="tab-pane fade active in" id="details">
+					@Html.Raw(Model.Description)
 				</div>
 
 				<div class="tab-pane fade" id="companyprofile">

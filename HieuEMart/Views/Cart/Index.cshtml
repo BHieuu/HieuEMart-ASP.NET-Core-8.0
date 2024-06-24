@@ -18,8 +18,8 @@
 			<table class="table table-condensed">
 				<thead>
 					<tr class="cart_menu">
-						<td class="image">Sản phẩm</td>
-						<td class="description"></td>
+						<td class="image" width="30%">Sản phẩm</td>
+						<td class="name">Tên sản phẩm</td>
 						<td class="price">Giá</td>
 						<td class="quantity">Số lượng</td>
 						<td class="total">Tổng</td>
@@ -32,9 +32,9 @@
 						@foreach(var item in Model.CartItems)
 						{
 					<tr>
-						<td class="cart_product">
-							<a href=""><img src="~/images/" alt="@item.ProductName"></a>
-						</td>
+							<td class="cart_product" >
+								<img src="~/media/products/@item.Image" width="50%"\>
+								</td>
 						<td class="cart_description">
 							<h4><a href="">@item.ProductName</a></h4>	
 						</td>
