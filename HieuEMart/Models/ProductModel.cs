@@ -27,8 +27,8 @@ namespace HieuEMart.Models
 		public BrandModel Brand { get; set; }
 
 
-		[NotMapped]
-		[FileExtension]
-		public IFormFile? ImageUpload { get; set; }
-	}
+        [NotMapped]
+        [FileExtension]
+        public IFormFile? ImageUpload { get; set; }
+    }
 }

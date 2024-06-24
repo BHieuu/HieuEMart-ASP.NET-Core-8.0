@@ -1,6 +1,6 @@
-﻿@model IEnumerable<ProductModel>
+﻿@model IEnumerable<CategoryModel>
 @{
-    ViewData["title"] = "Danh sách sản phẩm";
+    ViewData["title"] = "Danh sách danh mục";
 }
 @section naviheader {
     <!-- Left navbar links -->
@@ -12,7 +12,7 @@
             <a href="/admin" class="nav-link">Trang chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/admin/product" class="nav-link">Sản phẩm</a>
+            <a href="/admin/category" class="nav-link">Danh mục</a>
         </li>
     </ul>
 }
@@ -20,12 +20,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Danh sách sản phẩm</h1>
+                <h1>Danh sách Danh mục</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Sản phẩm</li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                    <li class="breadcrumb-item active">Danh mục</li>
                 </ol>
             </div>
         </div>
@@ -36,20 +36,20 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Danh sách sản phẩm</h3>
+            <h3 class="card-title">Danh sách Danh mục</h3>
 
             <div class="card-tools">
-                <a href="/admin/product/create" class="btn btn-primary">Thêm mới</a>
+                <a href="/admin/category/create" class="btn btn-primary">Thêm mới</a>
             </div>
         </div>
         <div class="card-body">
             <table class=" table table-hover">
                 <thead>
                     <tr>
-                        <th>Sản phẩm</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Danh mục</th>
-                        <th>Slug</th>
+                        <th>Tên Danh mục</th>
+                        <th>Mô tả Danh mục</th>
+                        <th>Slug Danh mục</th>
+                        <th>Trạng thái Danh mục</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -59,13 +59,22 @@
                         foreach (var item in Model)
                         {
                             <tr>
-                                <td width="20%"><img src="~/media/products/@item.Image" width="30%"></td>
                                 <td>@item.Name</td>
-                                <td>@item.Category.Name</td>
+                                <td>@Html.Raw(@item.Description)</td>
                                 <td>@item.Slug</td>
                                 <td>
-                                    <a class="btn btn-sm btn-success" asp-action="Edit" asp-controller="Product" asp-route-Id="@item.Id">Sửa</a>
-                                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-controller="Product" asp-route-Id="@item.Id">Xóa</a>
+                                    @if (@item.Status == 1)
+                                    {
+                                        <span class="text text-success">Hiển thị</span>
+                                    }
+                                    else
+                                    {
+                                    <span class="text text-danger">Ẩn</span>
+                                    }
+                                </td>
+                                <td>
+                                    <a class="btn btn-sm btn-success" asp-action="Edit" asp-controller="Category" asp-route-Id="@item.Id">Sửa</a>
+                                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-controller="Category" asp-route-Id="@item.Id">Xóa</a>
                                 </td>
                             </tr>
                         }

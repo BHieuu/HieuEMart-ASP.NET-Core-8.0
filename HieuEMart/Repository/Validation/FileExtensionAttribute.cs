@@ -1,4 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
 
 namespace HieuEMart.Repository.Validation
 {
@@ -10,7 +13,7 @@ namespace HieuEMart.Repository.Validation
             {
                 var extension = Path.GetExtension(file.FileName); //123.jpg
                 string[] extensions = { "jpg", "png", "jpeg" };
-                bool result = extensions.Any(x => extension.EndsWith(x));
+                bool result = extensions.Any(x => extension.EndsWith(x, System.StringComparison.OrdinalIgnoreCase));
 
                 if (!result)
                 {

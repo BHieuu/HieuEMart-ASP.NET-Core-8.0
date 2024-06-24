@@ -96,7 +96,7 @@ namespace HieuEMart.Areas.Admin.Models
             if (ModelState.IsValid)
             {
                 product.Slug = product.Name.Replace(" ", "-");
-                var slug = await _dataContext.Products.FirstOrDefaultAsync(p => p.Slug == product.Slug);
+                var slug = await _dataContext.Products.FirstOrDefaultAsync(p => p.Slug == product.Slug && p.Id != product.Id);
                 if (slug != null)
                 {
                     ModelState.AddModelError("", "Sản phẩm đã có trong cơ sở dữ liệu");
