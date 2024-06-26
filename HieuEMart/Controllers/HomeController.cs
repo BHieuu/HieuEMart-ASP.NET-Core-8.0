@@ -1,5 +1,6 @@
 using HieuEMart.Models;
 using HieuEMart.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -28,8 +29,16 @@ namespace HieuEMart.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(int statuscode)
         {
+            if (statuscode == 404)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+
+            }
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }

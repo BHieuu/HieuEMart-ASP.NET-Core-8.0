@@ -74,7 +74,7 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-sm btn-success" asp-action="Edit" asp-controller="brand" asp-route-Id="@item.Id">Sửa</a>
-                                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-controller="brand" asp-route-Id="@item.Id">Xóa</a>
+                                    <a class="btn btn-sm btn-danger confirmDeletion" asp-action="Delete" asp-controller="brand" asp-route-Id="@item.Id">Xóa</a>
                                 </td>
                             </tr>
                         }

@@ -41,7 +41,6 @@ namespace HieuEMart.Controllers
 				cartItems.Quantity += 1;
 			}
 			HttpContext.Session.SetJson("Cart", cart);
-			TempData["success"] = "Thêm sản phẩm thành công!";
 			return Redirect(Request.Headers["Referer"].ToString());
 		}
 		public async Task<IActionResult> Decrease(int Id)

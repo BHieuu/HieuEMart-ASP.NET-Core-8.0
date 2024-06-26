@@ -4,7 +4,10 @@
 		height: 445px;
 	}
 </style>
-<div class="col-sm-3">
+<div>
+@Html.Partial("_Slide")
+</div>
+<div class="col-sm-3"> 
 	@Html.Partial("_SidebarPartial")
 </div>
 @if (TempData["SuccessMessage"] != null)

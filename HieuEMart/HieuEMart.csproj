@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="wwwroot\backend\css\" />
     <Folder Include="wwwroot\media\products\" />
   </ItemGroup>
 
@@ -1549,6 +1550,13 @@
     <None Include="wwwroot\Content\Clients\plugins\uplot\uPlot.esm.js" />
     <None Include="wwwroot\Content\Clients\plugins\uplot\uPlot.iife.js" />
     <None Include="wwwroot\Content\Clients\plugins\uplot\uPlot.iife.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Home\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

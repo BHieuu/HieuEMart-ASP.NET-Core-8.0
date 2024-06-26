@@ -1,12 +1,13 @@
 ﻿@model IEnumerable<ProductModel>
-<div class="col-sm-3">
-	@Html.Partial("_SidebarPartial")
-</div>
 <style>
 	.product-image-wrapper {
 		height: 445px;
 	}
 </style>
+@Html.Partial("_Slide")
+<div class="col-sm-3">
+	@Html.Partial("_SidebarPartial")
+</div>
 <div class="col-sm-9 padding-right">
 	<div class="features_items">
 		<!--features_items-->
@@ -18,7 +19,7 @@
 					<a>
 						<div class="single-products">
 							<div class="productinfo text-center">
-								<img src="~/images/@item.Image" alt="@item.Name" width="100%" />
+								<img src="~/media/products/@item.Image" alt="@item.Name" width="100%" />
 								<h2>@item.Price</h2>
 								<p>@item.Name</p>
 								<p>Danh mục: @item.Category.Name</p>
