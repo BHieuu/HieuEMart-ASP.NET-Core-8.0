@@ -1,12 +1,14 @@
 ﻿using HieuEMart.Models;
 using HieuEMart.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace HieuEMart.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class BrandController : Controller
+	[Authorize]
+	public class BrandController : Controller
     {
         private readonly DataContext _dataContext;
         public BrandController(DataContext context)

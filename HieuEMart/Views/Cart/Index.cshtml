@@ -56,12 +56,10 @@
 					</tr>
 						}
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td
-							<td></td>
-							<td></td>
-							<td></td>
+							@if(User.Identity?.IsAuthenticated ?? false)
+							{
+								<td><a class="btn btn-warning btn-sm" asp-controller="Checkout" asp-action="Checkout"> Thanh toán </a></td>
+							}
 							<td><a class="btn btn-danger btn-sm" asp-controller="Cart" asp-action="Clear">Xóa tất cả </a></td>
 						</tr>
 						<tr rowspan="6">

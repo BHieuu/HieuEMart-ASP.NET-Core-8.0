@@ -1,14 +1,14 @@
 ﻿using HieuEMart.Models;
 using HieuEMart.Repository;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace HieuEMart.Areas.Admin.Models
 {
-    [Area("Admin")]
+	[Area("Admin")]
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly DataContext _dataContext;
